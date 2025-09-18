@@ -1,3 +1,3 @@
 <?php
 
-$lang['CAS Simple Auth'] = 'Authenticate with :';
+$lang['CAS Simple Auth'] = 'Authenticate with:';

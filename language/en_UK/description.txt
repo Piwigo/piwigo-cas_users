@@ -1,2 +1,2 @@
-SSO connexion using CAS.
+SSO connection using CAS.
 Beware only compatible up to PHP 8.2
