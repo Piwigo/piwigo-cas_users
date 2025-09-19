@@ -1,0 +1,2 @@
+CAS kullanarak SSO bağlantısı.
+Dikkat: Yalnızca PHP 8.2 sürümüne kadar uyumludur.
