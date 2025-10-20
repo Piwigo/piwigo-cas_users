@@ -1,0 +1,2 @@
+SSO-tenging með CAS.
+Athugið aðeins samhæft við PHP 8.2
