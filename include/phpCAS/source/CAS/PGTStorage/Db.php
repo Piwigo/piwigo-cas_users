@@ -17,7 +17,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * PHP Version 5
+ * PHP Version 7
  *
  * @file     CAS/PGTStorage/Db.php
  * @category Authentication
@@ -316,7 +316,7 @@ class CAS_PGTStorage_Db extends CAS_PGTStorage_AbstractStorage
         try {
             $pdo->beginTransaction();
 
-            $query = $pdo->query($this->createTableSQL());
+            $query = $pdo->query($this->createTableSql());
             $query->closeCursor();
 
             $pdo->commit();
