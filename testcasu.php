@@ -15,9 +15,18 @@ if ($cas_port != '443') {
 $cas_url = $cas_url . $cas_context;
 
 require_once $phpcas_path . '/CAS.php';
-phpCAS::setDebug();
+phpCAS::setLogger();
 phpCAS::setVerbose(true);
-phpCAS::client(SAML_VERSION_1_1, $cas_host, $cas_port, $cas_context);
+
+  phpCAS::client(
+      CAS_VERSION_2_0,
+      $conf['casu']['casu_host'],
+      (int)$conf['casu']['casu_port'],
+      $conf['casu']['casu_context'],
+      $serviceUrl,
+      false
+  );
+
 phpCAS::setNoCasServerValidation();
 phpCAS::forceAuthentication();
 

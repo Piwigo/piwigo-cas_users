@@ -30,8 +30,8 @@ if (isset($_POST['save_config'])) {
         'casu_altaccess' => isset($_POST['casu_altaccess']),
         'casu_altaccess_text' => (isset($_POST['casu_altaccess_text']) ? pwg_db_real_escape_string($_POST['casu_altaccess_text']) : '' ),
         'casu_login' => (isset($_POST['casu_login']) ? pwg_db_real_escape_string($_POST['casu_login']) : ''),
-        //'casu_groups' => (isset($casu_group_up) ? serialize($casu_group_up) : ''),
-        'casu_groups' => (isset($casu_group_up) ? $casu_group_up : ''),
+        'casu_groups' => (isset($casu_group_up) ? serialize($casu_group_up) : ''),
+        // 'casu_groups' => (isset($casu_group_up) ? $casu_group_up : ''),
     );
 
 
