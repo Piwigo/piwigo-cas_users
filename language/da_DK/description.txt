@@ -1,2 +1,0 @@
-SSO-forbindelse vha. CAS.
-OBS: Kun kompatibel op til PHP 8.2

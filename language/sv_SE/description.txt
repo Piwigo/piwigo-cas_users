@@ -1,2 +1,0 @@
-SSO anslutning via CAS.
-Dock endast kompatibel upp till PHP 8.2
