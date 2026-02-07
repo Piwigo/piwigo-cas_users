@@ -1,0 +1,2 @@
+Conexión de SSO utilizando CAS.
+Atención: compatible solamente hasta PHP 8.2
