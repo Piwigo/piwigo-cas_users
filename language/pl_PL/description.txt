@@ -1,0 +1,2 @@
+Połączenie SSO przy użyciu CAS.
+Uwaga: kompatybilne z PHP tylko do 8.2
