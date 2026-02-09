@@ -1,0 +1,2 @@
+SSO připojení pomocí CAS.
+Pozor, kompatibilní pouze s PHP verzemi do 8.2.
