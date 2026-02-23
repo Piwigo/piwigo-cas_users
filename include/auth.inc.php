@@ -8,6 +8,11 @@ function casu_get_casu_groups($attributes)
     $confcasu = conf_get_param('casu', array());
     foreach ($confcasu['casu_groups'] as $group_attr => $regexp)
     {
+        // Skip if attribute does not exist
+        if (!isset($attributes[$group_attr])) {
+            continue;
+        }
+
         if (is_array($attributes[$group_attr]))
         {
             foreach ($attributes[$group_attr] as $group)
@@ -63,6 +68,11 @@ function casu_register_groups($user_id, $casu_groups)
     $groups_add = array();
     foreach ($casu_groups as $group)
     {
+        // Skip empty group names
+        if (empty($group)) {
+            continue;
+        }
+
         $query = 'SELECT id,name FROM ' . GROUPS_TABLE
                 . ' WHERE name LIKE \'casu_' . pwg_db_real_escape_string($group) . '\';';
         $result = pwg_query($query);

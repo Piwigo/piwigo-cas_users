@@ -2,7 +2,7 @@
 
 /*
   Plugin Name: casusers
-  Version: 0.6
+  Version: auto
   Description: Authenticate again a CAS SSO server and fetch some useful attributes.
   Plugin URI: auto
   Author: Pascal
@@ -61,7 +61,7 @@ function casu_init()
   // Enable debugging
   phpCAS::setLogger();
   // Enable verbose error messages. Disable in production!
-  // phpCAS::setVerbose(true); 
+  phpCAS::setVerbose(true); 
 
   if (!isset($_GET['cas_sso']))
   {
@@ -123,6 +123,9 @@ function casu_init()
 
     //Log user into piwigo
     log_user($user_id, false);
+    
+    // Redirect to index.php after login
+    redirect(make_index_url());
   }
 }
 
