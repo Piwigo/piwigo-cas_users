@@ -11,6 +11,10 @@
   <dd>
     <form id="quickconnect" method="get" action="{$U_LOGIN}">
       <fieldset style="text-align:center;">
+      {if isset($CASU.casu_logo)}
+<img src="{$CASU.casu_logo}" style="max-height:50px;width:100%;object-fit:contain;margin-bottom:10px;">
+<br>
+      {/if}
           <legend class="casu">{'CAS Simple Auth'|translate}</legend>
         {strip}
               <a href="{$CASU_LOGIN_URL}" class="btn btn-raised btn-primary">{if isset($CASU.casu_logo_alt)}{$CASU.casu_logo_alt}{else}{'Sign in'|translate}{/if}</a>
@@ -22,4 +26,4 @@
       </fieldset>
     </form>
   </dd>
-{/if}
+{/if} 
