@@ -28,7 +28,7 @@ function casu_blockmanager($menu_ref_arr)
 }
 
 /*
- * we want to replace completely the form part in identification_menubar.tpl as CAS becomme the only authentification available
+ * we want to replace completely the form part in identification_menubar.tpl as CAS can optionally be the only authentification available
  */
 function casu_add_menubar_buttons_prefilter($content, $smarty)
 {
@@ -43,12 +43,16 @@ function casu_add_menubar_buttons_prefilter($content, $smarty)
  */
 function casu_begin_identification()
 {
-  global $template;
-    $template->assign(
-      array(
-        'CASU_LOGIN_URL' => get_root_url().'identification.php?cas_sso=tryLoginCAS',
-      )
-    );
+  global $template, $conf;
+
+  $casu = safe_unserialize($conf['casu']);
+
+  $template->assign(
+    array(
+      'CASU_LOGIN_URL' => get_root_url().'identification.php?cas_sso=tryLoginCAS',
+      'CASU' => $casu,
+    )
+  );
 
   $template->set_prefilter('identification', 'casu_add_buttons_prefilter');
 }
@@ -57,7 +61,6 @@ function casu_add_buttons_prefilter($content)
 {
   $search = '</form>';
   $add = file_get_contents(CASU_PATH . 'template/identification_page.tpl');
-  // $add = '<div>Hannah</div>';
 
   return str_replace($search, $search.$add, $content);
 }
