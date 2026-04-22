@@ -1,7 +1,7 @@
 <?php
 
 /*
-  Plugin Name: casusers
+  Plugin Name: cas_users
   Version: auto
   Description: Authenticate again a CAS SSO server and fetch some useful attributes.
   Plugin URI: auto
@@ -12,11 +12,11 @@
 
 defined('PHPWG_ROOT_PATH') or die('Hacking attempt!');
 
-if (basename(dirname(__FILE__)) != 'casusers') 
+if (basename(dirname(__FILE__)) != 'cas_users') 
 {
-  add_event_handler('init', 'casusers_error');
+  add_event_handler('init', 'cas_users_error');
 
-  function casusers_error() 
+  function cas_users_error() 
   {
     global $page;
     $page['errors'][] = 'CAS Users folder name is incorrect, uninstall the plugin and rename it to "casusers"';
@@ -25,10 +25,10 @@ if (basename(dirname(__FILE__)) != 'casusers')
   return;
 }
 
-define('CASU_PATH', PHPWG_PLUGINS_PATH . 'casusers/');
+define('CASU_PATH', PHPWG_PLUGINS_PATH . 'cas_users/');
 
 define('CASU_CAS', CASU_PATH . 'include/phpCAS/CAS.php');
-define('CASU_ADMIN', get_root_url() . 'admin.php?page=plugin-casusers');
+define('CASU_ADMIN', get_root_url() . 'admin.php?page=plugin-cas_users');
 
 require_once CASU_PATH . 'include/auth.inc.php';
 include_once(CASU_PATH . 'include/public_events.inc.php');

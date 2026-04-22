@@ -2,7 +2,7 @@
 
 defined('PHPWG_ROOT_PATH') or die('Hacking attempt!');
 
-class casusers_maintain extends PluginMaintain {
+class cas_users_maintain extends PluginMaintain {
 
     private $default_conf = array(
         'casu_port' => 443,
